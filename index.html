@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sushma Bojja · Data Analyst Portfolio</title>
+  <meta name="description" content="Portfolio of Sushma Bojja — Data Analyst & BI Developer (Power BI, Tableau, SQL, Python, AWS, Azure, Snowflake)">
+  <style>
+    :root{
+      --bg:#0b0c10; --panel:#111318; --muted:#9aa4b2; --text:#e7ecf3;
+      --brand:#5fc7ff; --brand-2:#6bffb5; --card:#0f1117; --border:#1b1f2a;
+      --shadow:0 10px 30px rgba(0,0,0,.35); --radius:16px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,12,16,.9),rgba(11,12,16,.7));backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:inline-flex;align-items:center;justify-content:center;color:#081018;font-weight:700}
+    .name{font-weight:700;letter-spacing:.3px}
+    .pill{display:inline-flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+    .links{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:9px 14px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:38px 0}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .title{font-size:36px;line-height:1.2;margin:0 0 10px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+
+    /* Sections & grids */
+    section{padding:18px 0}
+    h2{font-size:22px;margin:0 0 14px}
+    .grid{display:grid;gap:18px}
+    .grid.cards{grid-template-columns:repeat(3,1fr)}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .project,.skillcat,.xp{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border);margin-top:26px;padding:20px 0;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media(max-width:980px){.hero{grid-template-columns:1fr}.grid.cards{grid-template-columns:1fr 1fr}.grid.two{grid-template-columns:1fr}}
+    @media(max-width:640px){.grid.cards{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="avatar">SB</div>
+        <div class="name">Sushma Bojja</div>
+        <span class="pill">Data Analyst · BI Developer</span>
+      </div>
+      <div class="links">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#skills">Skills</a>
+        <a class="btn" href="#experience">Experience</a>
+        <a class="btn" href="#education">Education</a>
+        <a class="btn" href="#certifications">Certifications</a>
+        <a class="btn" href="#engineering">Engineering Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="card">
+        <h1 class="title">Turning data into clear decisions.</h1>
+        <p class="subtitle">
+          Data Analyst with <b>4 years</b> of experience in Business Intelligence and Analytics.
+          I build clean, trustworthy dashboards and data pipelines using <b>Power BI</b>, <b>Tableau</b>, <b>SQL</b>, <b>Python</b>,
+          and cloud platforms like <b>AWS</b>, <b>Azure</b>, and <b>Snowflake</b>.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Recent Focus</h2>
+        <ul>
+          <li>USAA complaint analytics, drill-down dashboards, SLA/CSAT tracking.</li>
+          <li>AT&amp;T operational KPIs with RLS and SharePoint integrations.</li>
+          <li>CVS exec BI: reconciliation SQL, DAX measures, time-series, gateway refresh.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Recent Projects</h2>
+      <div class="grid cards">
+        <div class="project">
+          <h3>Complaint Trends &amp; Resolution (USAA)</h3>
+          <p>Complaint categories, response times, and CSAT trends with drill-down for operations.</p>
+        </div>
+        <div class="project">
+          <h3>Operational Analytics (AT&amp;T)</h3>
+          <p>ETL, data modeling, and KPI reporting across SharePoint and internal sources with RLS.</p>
+        </div>
+        <div class="project">
+          <h3>Enterprise BI Dashboards (CVS Pharmacy)</h3>
+          <p>Reconciliation SQL, DAX measures, time-series analysis, and gateway refresh for exec KPIs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid two">
+        <div class="skillcat">
+          <h3>Visualization</h3>
+          <div class="chips"><span>Power BI</span><span>Tableau</span><span>DAX</span><span>RLS</span><span>SSRS</span></div>
+        </div>
+        <div class="skillcat">
+          <h3>Data &amp; Code</h3>
+          <div class="chips"><span>SQL</span><span>Python</span><span>Pandas</span><span>NumPy</span></div>
+        </div>
+        <div class="skillcat">
+          <h3>Cloud &amp; ETL</h3>
+          <div class="chips"><span>Azure</span><span>AWS (S3/Glue/Redshift)</span><span>Snowflake</span><span>ADF</span><span>SSIS</span></div>
+        </div>
+        <div class="skillcat">
+          <h3>Databases</h3>
+          <div class="chips"><span>SQL Server</span><span>Oracle</span><span>PostgreSQL</span><span>MySQL</span><span>DB2</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Recent Experience</h2>
+      <div class="grid two">
+        <div class="xp">
+          <h3>Tableau Developer — USAA (via Intelligenie LLC)</h3>
+          <div>San Antonio, TX · Jan 2025 – Present</div>
+          <ul>
+            <li>Interactive dashboards with KPIs, trends, drill-through; Tableau Prep for data shaping.</li>
+            <li>Snowflake/SQL Server/Excel sources; LODs, table calcs, parameters; performance tuning.</li>
+            <li>Published to Server with RLS; scheduled refreshes; governance & documentation.</li>
+          </ul>
+        </div>
+        <div class="xp">
+          <h3>Power BI Developer — AT&amp;T</h3><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sushma Bojja · Data Analyst Portfolio</title>
+  <meta name="description" content="Portfolio of Sushma Bojja — Data Analyst & BI Developer (Power BI, Tableau, SQL, Python, AWS, Azure, Snowflake)">
+  <style>
+    :root{
+      --bg:#0b0c10; --panel:#111318; --muted:#9aa4b2; --text:#e7ecf3;
+      --brand:#5fc7ff; --brand-2:#6bffb5; --card:#0f1117; --border:#1b1f2a;
+      --shadow:0 10px 30px rgba(0,0,0,.35); --radius:16px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,12,16,.9),rgba(11,12,16,.7));backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:inline-flex;align-items:center;justify-content:center;color:#081018;font-weight:700}
+    .name{font-weight:700;letter-spacing:.3px}
+    .pill{display:inline-flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+    .links{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:9px 14px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:38px 0}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .title{font-size:36px;line-height:1.2;margin:0 0 10px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+
+    /* Sections & grids */
+    section{padding:18px 0}
+    h2{font-size:22px;margin:0 0 14px}
+    .grid{display:grid;gap:18px}
+    .grid.cards{grid-template-columns:repeat(3,1fr)}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .project,.skillcat,.xp{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border);margin-top:26px;padding:20px 0;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media(max-width:980px){.hero{grid-template-columns:1fr}.grid.cards{grid-template-columns:1fr 1fr}.grid.two{grid-template-columns:1fr}}
+    @media(max-width:640px){.grid.cards{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="avatar">SB</div>
+        <div class="name">Sushma Bojja</div>
+        <span class="pill">Data Analyst · BI Developer</span>
+      </div>
+      <div class="links">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#skills">Skills</a>
+        <a class="btn" href="#experience">Experience</a>
+        <a class="btn" href="#education">Education</a>
+        <a class="btn" href="#certifications">Certifications</a>
+        <a class="btn" href="#engineering">Engineering Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="card">
+        <h1 class="title">Turning data into clear decisions.</h1>
+        <p class="subtitle">
+          Data Analyst with <b>4 years</b> of experience in Business Intelligence and Analytics.
+          I build clean, trustworthy dashboards and data pipelines using <b>Power BI</b>, <b>Tableau</b>, <b>SQL</b>, <b>Python</b>,
+          and cloud platforms like <b>AWS</b>, <b>Azure</b>, and <b>Snowflake</b>.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Recent Focus</h2>
+        <ul>
+          <li>USAA complaint analytics, drill-down dashboards, SLA/CSAT tracking.</li>
+          <li>AT&amp;T operational KPIs with RLS and SharePoint integrations.</li>
+          <li>CVS exec BI: reconciliation SQL, DAX measures, time-series, gateway refresh.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Recent Projects</h2>
+      <div class="grid cards">
+        <div class="project">
+          <h3>Complaint Trends &amp; Resolution (USAA)</h3>
+          <p>Complaint categories, response times, and CSAT trends with drill-down for operations.</p>
+        </div>
+        <div class="project">
+          <h3>Operational Analytics (AT&amp;T)</h3>
+          <p>ETL, data modeling, and KPI reporting across SharePoint and internal sources with RLS.</p>
+        </div>
+        <div class="project">
+          <h3>Enterprise BI Dashboards (CVS Pharmacy)</h3>
+          <p>Reconciliation SQL, DAX measures, time-series analysis, and gateway refresh for exec KPIs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid two">
+        <div class="skillcat">
+          <h3>Visualization</h3>
+          <div class="chips"><span>Power BI</span><span>Tableau</span><span>DAX</span><span>RLS</span><span>SSRS</span></div>
+        </div>
+        <div class="skillcat">
+          <h3>Data &amp; Code</h3>
+          <div class="chips"><span>SQL</span><span>Python</span><span>Pandas</span><span>NumPy</span></div>
+        </div>
+        <div class="skillcat">
+          <h3>Cloud &amp; ETL</h3>
+          <div class="chips"><span>Azure</span><span>AWS (S3/Glue/Redshift)</span><span>Snowflake</span><span>ADF</span><span>SSIS</span></div>
+        </div>
+        <div class="skillcat">
+          <h3>Databases</h3>
+          <div class="chips"><span>SQL Server</span><span>Oracle</span><span>PostgreSQL</span><span>MySQL</span><span>DB2</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Recent Experience</h2>
+      <div class="grid two">
+        <div class="xp">
+          <h3>Tableau Developer — USAA (via Intelligenie LLC)</h3>
+          <div>San Antonio, TX · Jan 2025 – Present</div>
+          <ul>
+            <li>Interactive dashboards with KPIs, trends, drill-through; Tableau Prep for data shaping.</li>
+            <li>Snowflake/SQL Server/Excel sources; LODs, table calcs, parameters; performance tuning.</li>
+            <li>Published to Server with RLS; scheduled refreshes; governance & documentation.</li>
+          </ul>
+        </div>
+        <div class="xp">
+          <h3>Power BI Developer — AT&amp;T</h3>
+          <div>Jul 2024 – Dec 2024</div>
+          <ul>
+            <li>ETL, data modeling and transformations; SQL + SharePoint integrations.</li>
+            <li>Reports with DAX, gateway refresh, access controls, and documentation.</li>
+            <li>Agile collaboration; maintenance and troubleshooting.</li>
+          </ul>
+        </div>
+        <div class="xp">
+          <h3>Power BI Developer — CVS Pharmacy</h3>
+          <div>Apr 2023 – Jun 2024</div>
+          <ul>
+            <li>Reconciliation SQL; DAX measures; time-series analysis; drill-down reports.</li>
+            <li>On-prem gateway, subscriptions, alerts; SharePoint Online embedding.</li>
+            <li>RLS & role-based access; SharePoint lists for workflow tracking.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="xp"><h3>Master of Science in Computer Science</h3><div>Wichita State University · 2020–2021</div></div>
+      <div class="xp"><h3>Bachelor of Computer Science and Engineering</h3><div>JNTU Hyderabad · 2015–2019</div></div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>AWS Cloud Practitioner</li>
+        <li>Power BI Data Analyst Associate</li>
+      </ul>
+    </section>
+
+    <section id="engineering">
+      <h2>Engineering Projects</h2>
+      <ul>
+        <li><b>COVID-19 Data Visualization:</b> Interactive dashboard showing trends, vaccination rates, and regional comparisons.</li>
+        <li><b>Hotel Management System Database:</b> Database design for efficient hotel operations management.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <strong>Email:</strong> <a href="mailto:Bojjasushmareddy97@gmail.com">Bojjasushmareddy97@gmail.com</a>
+        &nbsp;•&nbsp; <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sushma-reddy-144b04301/" target="_blank">linkedin.com/in/sushma-reddy-144b04301</a>
+        &nbsp;•&nbsp; <strong>GitHub:</strong> <a href="https://github.com/SushmaB97" target="_blank">github.com/SushmaB97</a>
+      </p>
+    </section>
+
+    <footer><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sushma Bojja · Data Analyst Portfolio</title>
+  <meta name="description" content="Portfolio of Sushma Bojja — Data Analyst & BI Developer (Power BI, Tableau, SQL, Python, AWS, Azure, Snowflake)">
+  <style>
+    :root{
+      --bg:#0b0c10; --panel:#111318; --muted:#9aa4b2; --text:#e7ecf3;
+      --brand:#5fc7ff; --brand-2:#6bffb5; --card:#0f1117; --border:#1b1f2a;
+      --shadow:0 10px 30px rgba(0,0,0,.35); --radius:16px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,12,16,.9),rgba(11,12,16,.7));backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:inline-flex;align-items:center;justify-content:center;color:#081018;font-weight:700}
+    .name{font-weight:700;letter-spacing:.3px}
+    .pill{display:inline-flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+    .links{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:9px 14px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:38px 0}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .title{font-size:36px;line-height:1.2;margin:0 0 10px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+
+    /* Sections & grids */
+    section{padding:18px 0}
+    h2{font-size:22px;margin:0 0 14px}
+    .grid{display:grid;gap:18px}
+    .grid.cards{grid-template-columns:repeat(3,1fr)}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .project,.skillcat,.xp{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border);margin-top:26px;padding:20px 0;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media(max-width:980px){.hero{grid-template-columns:1fr}.grid.cards{grid-template-columns:1fr 1fr}.grid.two{grid-template-columns:1fr}}
+    @media(max-width:640px){.grid.cards{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="avatar">SB</div>
+        <div class="name">Sushma Bojja</div>
+        <span class="pill">Data Analyst · BI Developer</span>
+      </div>
+      <div class="links">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#skills">Skills</a>
+        <a class="btn" href="#experience">Experience</a>
+        <a class="btn" href="#education">Education</a>
+        <a class="btn" href="#certifications">Certifications</a>
+        <a class="btn" href="#engineering">Engineering Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="card">
+        <h1 class="title">Turning data into clear decisions.</h1>
+        <p class="subtitle">
+          Data Analyst with <b>4 years</b> of experience in Business Intelligence and Analytics.
+          I build clean, trustworthy dashboards and data pipelines using <b>Power BI</b>, <b>Tableau</b>, <b>SQL</b>, <b>Python</b>,
+          and cloud platforms like <b>AWS</b>, <b>Azure</b>, and <b>Snowflake</b>.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Recent Focus</h2>
+        <ul>
+          <li>USAA complaint analytics, drill-down dashboards, SLA/CSAT tracking.</li>
+          <li>AT&amp;T operational KPIs with RLS and SharePoint integrations.</li>
+          <li>CVS exec BI: reconciliation SQL, DAX measures, time-series, gateway refresh.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Recent Projects</h2>
+      <div class="grid cards">
+        <div class="project">
+          <h3>Complaint Trends &amp; Resolution (USAA)</h3>
+          <p>Complaint categories, response times, and CSAT trends with drill-down for operations.</p>
+        </div>
+        <div class="project">
+          <h3>Operational Analytics (AT&amp;T)</h3>
+          <p>ETL, data modeling, and KPI reporting across SharePoint and internal sources with RLS.</p>
+        </div>
+        <div class="project">
+          <h3>Enterprise BI Dashboards (CVS Pharmacy)</h3>
+          <p>Reconciliation SQL, DAX measures, time-series analysis, and gateway refresh for exec KPIs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid two">
+        <div class="skillcat">
+          <h3>Visualization</h3>
+          <div class="chips"><span>Power BI</span><span>Tableau</span><span>DAX</span><span>RLS</span><span>SSRS</span></div>
+        </div>
+        <div class="skillcat">
+          <h3>Data &amp; Code</h3>
+          <div class="chips"><span>SQL</span><span>Python</span><span>Pandas</span><span>NumPy</span></div>
+        </div>
+        <div class="skillcat">
+          <h3>Cloud &amp; ETL</h3>
+          <div class="chips"><span>Azure</span><span>AWS (S3/Glue/Redshift)</span><span>Snowflake</span><span>ADF</span><span>SSIS</span></div>
+        </div>
+        <div class="skillcat">
+          <h3>Databases</h3>
+          <div class="chips"><span>SQL Server</span><span>Oracle</span><span>PostgreSQL</span><span>MySQL</span><span>DB2</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Recent Experience</h2>
+      <div class="grid two">
+        <div class="xp">
+          <h3>Tableau Developer — USAA (via Intelligenie LLC)</h3>
+          <div>San Antonio, TX · Jan 2025 – Present</div>
+          <ul>
+            <li>Interactive dashboards with KPIs, trends, drill-through; Tableau Prep for data shaping.</li>
+            <li>Snowflake/SQL Server/Excel sources; LODs, table calcs, parameters; performance tuning.</li>
+            <li>Published to Server with RLS; scheduled refreshes; governance & documentation.</li>
+          </ul>
+        </div>
+        <div class="xp">
+          <h3>Power BI Developer — AT&amp;T</h3>
+          <div>Jul 2024 – Dec 2024</div>
+          <ul>
+            <li>ETL, data modeling and transformations; SQL + SharePoint integrations.</li>
+            <li>Reports with DAX, gateway refresh, access controls, and documentation.</li>
+            <li>Agile collaboration; maintenance and troubleshooting.</li>
+          </ul>
+        </div>
+        <div class="xp">
+          <h3>Power BI Developer — CVS Pharmacy</h3>
+          <div>Apr 2023 – Jun 2024</div>
+          <ul>
+            <li>Reconciliation SQL; DAX measures; time-series analysis; drill-down reports.</li>
+            <li>On-prem gateway, subscriptions, alerts; SharePoint Online embedding.</li>
+            <li>RLS & role-based access; SharePoint lists for workflow tracking.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="xp"><h3>Master of Science in Computer Science</h3><div>Wichita State University · 2020–2021</div></div>
+      <div class="xp"><h3>Bachelor of Computer Science and Engineering</h3><div>JNTU Hyderabad · 2015–2019</div></div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>AWS Cloud Practitioner</li>
+        <li>Power BI Data Analyst Associate</li>
+      </ul>
+    </section>
+
+    <section id="engineering">
+      <h2>Engineering Projects</h2>
+      <ul>
+        <li><b>COVID-19 Data Visualization:</b> Interactive dashboard showing trends, vaccination rates, and regional comparisons.</li>
+        <li><b>Hotel Management System Database:</b> Database design for efficient hotel operations management.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <strong>Email:</strong> <a href="mailto:Bojjasushmareddy97@gmail.com">Bojjasushmareddy97@gmail.com</a>
+        &nbsp;•&nbsp; <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sushma-reddy-144b04301/" target="_blank">linkedin.com/in/sushma-reddy-144b04301</a>
+        &nbsp;•&nbsp; <strong>GitHub:</strong> <a href="https://github.com/SushmaB97" target="_blank">github.com/SushmaB97</a>
+      </p>
+    </section>
+
+    <footer>7
+      <div class="wrap" style="padding:0">© <span id="y"></span> Sushma Bojja · No ads · Built with GitHub Pages</div>
+    </footer>
+  </main>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
+
+      <div class="wrap" style="padding:0">© <span id="y"></span> Sushma Bojja · No ads · Built with GitHub Pages</div>
+    </footer>
+  </main>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
+
+          <div>Jul 2024 – Dec 2024</div>
+          <ul>
+            <li>ETL, data modeling and transformations; SQL + SharePoint integrations.</li>
+            <li>Reports with DAX, gateway refresh, access controls, and documentation.</li>
+            <li>Agile collaboration; maintenance and troubleshooting.</li>
+          </ul>
+        </div>
+        <div class="xp">
+          <h3>Power BI Developer — CVS Pharmacy</h3>
+          <div>Apr 2023 – Jun 2024</div>
+          <ul>
+            <li>Reconciliation SQL; DAX measures; time-series analysis; drill-down reports.</li>
+            <li>On-prem gateway, subscriptions, alerts; SharePoint Online embedding.</li>
+            <li>RLS & role-based access; SharePoint lists for workflow tracking.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="xp"><h3>Master of Science in Computer Science</h3><div>Wichita State University · 2020–2021</div></div>
+      <div class="xp"><h3>Bachelor of Computer Science and Engineering</h3><div>JNTU Hyderabad · 2015–2019</div></div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>AWS Cloud Practitioner</li>
+        <li>Power BI Data Analyst Associate</li>
+      </ul>
+    </section>
+
+    <section id="engineering">
+      <h2>Engineering Projects</h2>
+      <ul>
+        <li><b>COVID-19 Data Visualization:</b> Interactive dashboard showing trends, vaccination rates, and regional comparisons.</li>
+        <li><b>Hotel Management System Database:</b> Database design for efficient hotel operations management.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <strong>Email:</strong> <a href="mailto:Bojjasushmareddy97@gmail.com">Bojjasushmareddy97@gmail.com</a>
+        &nbsp;•&nbsp; <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sushma-reddy-144b04301/" target="_blank">linkedin.com/in/sushma-reddy-144b04301</a>
+        &nbsp;•&nbsp; <strong>GitHub:</strong> <a href="https://github.com/SushmaB97" target="_blank">github.com/SushmaB97</a>
+      </p>
+    </section>
+
+    <footer>
+      <div class="wrap" style="padding:0">© <span id="y"></span> Sushma Bojja · No ads · Built with GitHub Pages</div>
+    </footer>
+  </main>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
