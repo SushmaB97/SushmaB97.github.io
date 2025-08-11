@@ -17,24 +17,29 @@
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
 
     /* Header */
-    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,12,16,.9),rgba(11,12,16,.7));backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid var(--border)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:inline-flex;align-items:center;justify-content:center;color:#081018;font-weight:700}
-    .name{font-weight:700;letter-spacing:.3px}
-    .pill{display:inline-flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,12,16,.95),rgba(11,12,16,.85));backdrop-filter:blur(8px);z-index:1000;border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:inline-flex;align-items:center;justify-content:center;color:#081018;font-weight:700;flex:0 0 42px}
+    .name{font-weight:700;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .pill{display:inline-flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px;white-space:nowrap}
+
     .links{display:flex;gap:10px;flex-wrap:wrap}
     .btn{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:9px 14px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
     .btn:hover{transform:translateY(-1px)}
     .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#081018;font-weight:700;border-color:transparent}
 
-    /* Hero */
+    /* Hamburger (mobile only) */
+    .hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--border);border-radius:10px;background:var(--panel);cursor:pointer}
+    .hamburger span,.hamburger::before,.hamburger::after{content:"";display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:.25s}
+    .hamburger::before{transform:translateY(-6px)}
+    .hamburger::after{transform:translateY(6px)}
+
+    /* Cards & layout */
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:38px 0}
     .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .title{font-size:36px;line-height:1.2;margin:0 0 10px}
     .subtitle{color:var(--muted);margin:0 0 18px}
-
-    /* Sections & grids */
     section{padding:18px 0}
     h2{font-size:22px;margin:0 0 14px}
     .grid{display:grid;gap:18px}
@@ -43,39 +48,62 @@
     .project,.skillcat,.xp{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
     .chips{display:flex;gap:8px;flex-wrap:wrap}
 
-    /* Footer */
     footer{border-top:1px solid var(--border);margin-top:26px;padding:20px 0;color:var(--muted);font-size:14px}
 
-    /* Mobile tweaks */
-    @media(max-width:980px){.hero{grid-template-columns:1fr}.grid.cards{grid-template-columns:1fr 1fr}.grid.two{grid-template-columns:1fr}}
-    @media(max-width:640px){
-      .grid.cards{grid-template-columns:1fr}
-      .title{font-size:30px}
+    /* MOBILE BEHAVIOR */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid.cards{grid-template-columns:1fr 1fr}
+      .grid.two{grid-template-columns:1fr}
+    }
+    @media (max-width: 680px){
       .wrap{padding:20px}
-      .btn{padding:11px 16px}
-      .links{gap:8px}
+      .title{font-size:30px}
+      .links{display:block;gap:0}
+      .hamburger{display:flex}
+      /* Collapse menu by default */
+      .menu{overflow:hidden;max-height:0;transition:max-height .3s ease}
+      header.open .menu{max-height:600px} /* opens and pushes content down (no overlap) */
+      .menu .btn{display:block;width:100%;text-align:left;margin:8px 0}
+      .pill{display:none}
+      .name{max-width:55vw}
+      /* Animate hamburger into X when open */
+      header.open .hamburger::before{transform:translateY(0) rotate(45deg)}
+      header.open .hamburger::after{transform:translateY(0) rotate(-45deg)}
+      header.open .hamburger span{opacity:0}
+      /* Make the Download button stand out on mobile */
+      .menu .btn.primary{text-align:center}
     }
   </style>
 </head>
 <body>
   <!-- HEADER -->
-  <header>
+  <header id="site-header">
     <div class="nav">
       <div class="brand">
         <div class="avatar">SB</div>
         <div class="name">Sushma B</div>
         <span class="pill">Data Analyst · BI Developer</span>
       </div>
-      <div class="links">
-        <a class="btn" href="#projects">Projects</a>
-        <a class="btn" href="#skills">Skills</a>
-        <a class="btn" href="#experience">Experience</a>
-        <a class="btn" href="#education">Education</a>
-        <a class="btn" href="#certifications">Certifications</a>
-        <a class="btn" href="#engineering">Engineering Projects</a>
-        <a class="btn" href="#contact">Contact</a>
-        <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-      </div>
+
+      <!-- Hamburger (shown on mobile) -->
+      <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-controls="mainMenu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <!-- Menu -->
+      <nav id="mainMenu" class="menu" role="navigation">
+        <div class="links">
+          <a class="btn" href="#projects">Projects</a>
+          <a class="btn" href="#skills">Skills</a>
+          <a class="btn" href="#experience">Experience</a>
+          <a class="btn" href="#education">Education</a>
+          <a class="btn" href="#certifications">Certifications</a>
+          <a class="btn" href="#engineering">Engineering Projects</a>
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -157,7 +185,7 @@
           <ul>
             <li>ETL, data modeling and transformations; SQL + SharePoint integrations.</li>
             <li>Reports with DAX; gateway refresh; access controls and documentation.</li>
-            <li>Agile collaboration; maintenance and troubleshooting.</li>
+            <li>Ad hoc leadership reporting (Excel pivots/formulas; MFA enablement counts/%).</li>
           </ul>
         </div>
         <div class="xp">
@@ -212,6 +240,25 @@
     <div class="wrap" style="padding:0">© <span id="y"></span> Sushma B · No ads · Built with GitHub Pages</div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle (pushes content down, so no overlap)
+    const header = document.getElementById('site-header');
+    const btn = document.getElementById('menuToggle');
+    btn.addEventListener('click', () => {
+      const open = header.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Close menu when a link is clicked (better UX)
+    document.querySelectorAll('#mainMenu a').forEach(a=>{
+      a.addEventListener('click', ()=> {
+        header.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      });
+    });
+  </script>
 </body>
 </html>
