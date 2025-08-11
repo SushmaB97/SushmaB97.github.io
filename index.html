@@ -1,203 +1,181 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sushma B · Data Analyst Portfolio</title>
-  <meta name="description" content="Portfolio of Sushma B — Data Analyst & BI Developer (Power BI, Tableau, SQL, Python, AWS, Azure, Snowflake)">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sushma B - Portfolio</title>
   <style>
-    :root{
-      --bg:#0b0c10; --panel:#111318; --muted:#9aa4b2; --text:#e7ecf3;
-      --brand:#5fc7ff; --brand-2:#6bffb5; --card:#0f1117; --border:#1b1f2a;
-      --shadow:0 10px 30px rgba(0,0,0,.35); --radius:16px; --maxw:1100px;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
-
-    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,12,16,.9),rgba(11,12,16,.7));backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid var(--border)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:inline-flex;align-items:center;justify-content:center;color:#081018;font-weight:700}
-    .name{font-weight:700;letter-spacing:.3px}
-    .pill{display:inline-flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
-    .links{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:9px 14px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
-    .btn:hover{transform:translateY(-1px)}
-
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:38px 0}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .title{font-size:36px;line-height:1.2;margin:0 0 10px}
-    .subtitle{color:var(--muted);margin:0 0 18px}
-
-    section{padding:18px 0}
-    h2{font-size:22px;margin:0 0 14px}
-    .grid{display:grid;gap:18px}
-    .grid.cards{grid-template-columns:repeat(3,1fr)}
-    .grid.two{grid-template-columns:repeat(2,1fr)}
-    .project,.skillcat,.xp{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
-    .chips{display:flex;gap:8px;flex-wrap:wrap}
-
-    footer{border-top:1px solid var(--border);margin-top:26px;padding:20px 0;color:var(--muted);font-size:14px}
-    @media(max-width:980px){.hero{grid-template-columns:1fr}.grid.cards{grid-template-columns:1fr 1fr}.grid.two{grid-template-columns:1fr}}
-    @media(max-width:640px){.grid.cards{grid-template-columns:1fr}}
+    header {
+      background: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      margin: 5px 0 10px;
+      font-size: 1.1em;
+      color: #ccc;
+    }
+    .btn {
+      display: inline-block;
+      background: #4da3ff;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #1e7cd3;
+    }
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #444;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+    .project {
+      background: #1f1f1f;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+    .skills-list, .cert-list, .edu-list {
+      list-style: none;
+      padding: 0;
+    }
+    .skills-list li, .cert-list li, .edu-list li {
+      background: #1f1f1f;
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 4px;
+    }
+    footer {
+      background: #1f1f1f;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+    a {
+      color: #4da3ff;
+    }
+    @media (max-width: 640px){
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+      .btn {
+        display: block;
+        margin: 10px auto;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- HEADER (only once) -->
-  <header>
-    <div class="nav">
-      <div class="brand">
-        <div class="avatar">SB</div>
-        <div class="name">Sushma B</div>
-        <span class="pill">Data Analyst · BI Developer</span>
-      </div>
-      <div class="links">
-        <a class="btn" href="#projects">Projects</a>
-        <a class="btn" href="#skills">Skills</a>
-        <a class="btn" href="#experience">Experience</a>
-        <a class="btn" href="#education">Education</a>
-        <a class="btn" href="#certifications">Certifications</a>
-        <a class="btn" href="#engineering">Engineering Projects</a>
-        <a class="btn" href="#contact">Contact</a>
-      </div>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="card">
-        <h1 class="title">Turning data into clear decisions.</h1>
-        <p class="subtitle">Data Analyst with <b>4 years</b> of experience in Business Intelligence and Analytics. I build clean, trustworthy dashboards and data pipelines using <b>Power BI</b>, <b>Tableau</b>, <b>SQL</b>, <b>Python</b>, and cloud platforms like <b>AWS</b>, <b>Azure</b>, and <b>Snowflake</b>.</p>
-      </div>
-      <div class="card">
-        <h2>Recent Focus</h2>
-        <ul>
-          <li>USAA complaint analytics with drill-down SLA/CSAT tracking.</li>
-          <li>AT&amp;T operational KPIs with RLS and SharePoint integrations.</li>
-          <li>CVS executive BI: reconciliation SQL, DAX time-series, gateway refresh.</li>
-        </ul>
-      </div>
-    </section>
+<header>
+  <h1>Sushma B</h1>
+  <p>Business Intelligence & Data Analytics Professional</p>
+  <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+</header>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Recent Projects</h2>
-      <div class="grid cards">
-        <div class="project">
-          <h3>Complaint Trends &amp; Resolution (USAA)</h3>
-          <p>Complaint categories, response times, and CSAT trends with drill-down for operations teams.</p>
-        </div>
-        <div class="project">
-          <h3>Operational Analytics (AT&amp;T)</h3>
-          <p>ETL, data modeling, and KPI reporting across SharePoint and internal sources with RLS.</p>
-        </div>
-        <div class="project">
-          <h3>Enterprise BI Dashboards (CVS Pharmacy)</h3>
-          <p>Reconciliation SQL, DAX measures, time-series analysis, and gateway refresh for exec KPIs.</p>
-        </div>
-      </div>
-    </section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="grid two">
-        <div class="skillcat">
-          <h3>Visualization</h3>
-          <div class="chips"><span>Power BI</span><span>Tableau</span><span>DAX</span><span>RLS</span><span>SSRS</span></div>
-        </div>
-        <div class="skillcat">
-          <h3>Data &amp; Code</h3>
-          <div class="chips"><span>SQL</span><span>Python</span><span>Pandas</span><span>NumPy</span></div>
-        </div>
-        <div class="skillcat">
-          <h3>Cloud &amp; ETL</h3>
-          <div class="chips"><span>Azure</span><span>AWS (S3/Glue/Redshift)</span><span>Snowflake</span><span>ADF</span><span>SSIS</span></div>
-        </div>
-        <div class="skillcat">
-          <h3>Databases</h3>
-          <div class="chips"><span>SQL Server</span><span>Oracle</span><span>PostgreSQL</span><span>MySQL</span><span>DB2</span></div>
-        </div>
-      </div>
-    </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Organized, detail-oriented individual with over 8 years of experience specializing in data analysis and business intelligence, focusing mainly on Tableau, Power BI, Python, SQL, and a range of AWS cloud services. Skilled in data governance, modeling, integration, and visualization, with a demonstrated ability to generate actionable insights for informed decision-making.
+  </p>
+</section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <h2>Recent Experience</h2>
-      <div class="grid two">
-        <div class="xp">
-          <h3>Tableau Developer — USAA (via Intelligenie LLC)</h3>
-          <div>San Antonio, TX · Jan 2025 – Present</div>
-          <ul>
-            <li>Interactive dashboards with KPIs, trends, drill-through; Tableau Prep for data shaping.</li>
-            <li>Snowflake/SQL Server/Excel sources; LODs, table calcs, parameters; performance tuning.</li>
-            <li>Published to Server with RLS; scheduled refreshes; governance & documentation.</li>
-          </ul>
-        </div>
-        <div class="xp">
-          <h3>Power BI Developer — AT&amp;T</h3>
-          <div>Jul 2024 – Dec 2024</div>
-          <ul>
-            <li>ETL, data modeling and transformations; SQL + SharePoint integrations.</li>
-            <li>Reports with DAX; gateway refresh; access controls and documentation.</li>
-            <li>Agile collaboration; maintenance and troubleshooting.</li>
-          </ul>
-        </div>
-        <div class="xp">
-          <h3>Power BI Developer — CVS Pharmacy</h3>
-          <div>Apr 2023 – Jun 2024</div>
-          <ul>
-            <li>Reconciliation SQL; DAX measures; time-series analysis; drill-down reports.</li>
-            <li>On-prem gateway, subscriptions, alerts; SharePoint Online embedding.</li>
-            <li>RLS & role-based access; SharePoint lists for workflow tracking.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<section id="projects">
+  <h2>Recent Projects</h2>
+  <div class="project">
+    <h3>Power BI Developer – AT&T</h3>
+    <p>Developed interactive dashboards for telecom business metrics, integrating data from multiple sources and ensuring data accuracy for executive reporting.</p>
+  </div>
+  <div class="project">
+    <h3>Tableau Developer – USAA</h3>
+    <p>Built dashboards and reports to track customer complaints and service metrics, improving operational efficiency and customer satisfaction.</p>
+  </div>
+</section>
 
-    <!-- EDUCATION -->
-    <section id="education">
-      <h2>Education</h2>
-      <div class="xp"><h3>Master of Science in Computer Science</h3><div>Wichita State University · 2020–2021</div></div>
-      <div class="xp"><h3>Bachelor of Computer Science and Engineering</h3><div>JNTU Hyderabad · 2015–2019</div></div>
-    </section>
+<section id="skills">
+  <h2>Skills</h2>
+  <ul class="skills-list">
+    <li>Power BI, Tableau</li>
+    <li>SQL, Python (Pandas, NumPy)</li>
+    <li>AWS, Azure</li>
+    <li>Snowflake, Data Modeling</li>
+    <li>ETL Processes</li>
+  </ul>
+</section>
 
-    <!-- CERTS -->
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>AWS Cloud Practitioner</li>
-        <li>Power BI Data Analyst Associate</li>
-      </ul>
-    </section>
+<section id="certifications">
+  <h2>Certifications</h2>
+  <ul class="cert-list">
+    <li>Microsoft Power BI Data Analyst Associate</li>
+    <li>AWS Cloud Practitioner</li>
+  </ul>
+</section>
 
-    <!-- ENG PROJECTS -->
-    <section id="engineering">
-      <h2>Engineering Projects</h2>
-      <ul>
-        <li><b>COVID-19 Data Visualization:</b> Interactive dashboard with trends, vaccination rates, and regional comparisons.</li>
-        <li><b>Hotel Management System Database:</b> Database design for efficient hotel operations management.</li>
-      </ul>
-    </section>
+<section id="education">
+  <h2>Education</h2>
+  <ul class="edu-list">
+    <li>Master’s in Computer Science</li>
+  </ul>
+</section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        <strong>Email:</strong> <a href="mailto:sushmasbr0958@gmail.com">sushmasbr0958@gmail.com</a>
-        &nbsp;•&nbsp; <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sushmab97/" target="_blank">linkedin.com/in/sushmab97</a>
-        &nbsp;•&nbsp; <strong>GitHub:</strong> <a href="https://github.com/SushmaB97" target="_blank">github.com/SushmaB97</a>
-      </p>
-    </section>
-  </main>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    <strong>Email:</strong> <a href="mailto:sushmasbr0958@gmail.com">sushmasbr0958@gmail.com</a><br>
+    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sushmab97/" target="_blank">linkedin.com/in/sushmab97</a><br>
+    <strong>GitHub:</strong> <a href="https://github.com/SushmaB97" target="_blank">github.com/SushmaB97</a>
+  </p>
+</section>
 
-  <footer>
-    <div class="wrap" style="padding:0">© <span id="y"></span> Sushma B · No ads · Built with GitHub Pages</div>
-  </footer>
+<footer>
+  &copy; 2025 Sushma B. All Rights Reserved.
+</footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
